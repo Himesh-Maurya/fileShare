@@ -128,7 +128,7 @@ const onFileUploadSuccess = (res) => {
   progressContainer.style.display = "none"; // hide the box
 
   const { file: url } = JSON.parse(res);
-  console.log(url);
+  // console.log(url);
   sharingContainer.style.display = "block";
   fileURL.value = url;
 };
@@ -147,7 +147,7 @@ emailForm.addEventListener("submit", (e) => {
     emailTo: emailForm.elements["to-email"].value,
     emailFrom: emailForm.elements["from-email"].value,
   };
-  console.log(formData);
+  // console.log(formData);
   fetch(emailURL, {
     method: "POST",
     headers: {
