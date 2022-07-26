@@ -21,13 +21,6 @@ const corsOptions = {
 //   ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
 };
 
-// Default configuration looks like
-// {
-//     "origin": "*",
-//     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-//     "preflightContinue": false,
-//     "optionsSuccessStatus": 204
-//   }
 
 app.use(cors(corsOptions));
 app.set("views", path.join(__dirname, "/views"));
@@ -41,7 +34,7 @@ app.use("/files/download", require("./routes/download"));
 
 const job = schedule.scheduleJob('0 */5 * * *', function(){
     fetchData().then(console.log("hi"));
-    console.log('The answer to life, the universe, and everything!');
+    // console.log('The answer to life, the universe, and everything!');
   });
 
 app.listen(PORT, console.log(`Listening on port ${PORT}.`));

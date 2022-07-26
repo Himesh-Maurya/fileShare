@@ -8,7 +8,7 @@ module.exports = async ({ from, to, subject, text, html}) => {
             auth: {
                 user: process.env.MAIL_USER, // generated ethereal user
                  pass: process.env.MAIL_PASSWORD, // generated ethereal password
-            //    pass:"drxnjiaespwljlvm"
+            
             },
         });
 
