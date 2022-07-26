@@ -1,7 +1,7 @@
 const path = require("path");
 const schedule = require('node-schedule');
 const cors = require("cors");
-// const fetchData = require('./script');
+const fetchData = require('./script');
 const express = require("express");
 const app = express();
 
@@ -39,9 +39,9 @@ app.use("/api/files", require("./routes/files"));
 app.use("/files", require("./routes/show"));
 app.use("/files/download", require("./routes/download"));
 
-// const job = schedule.scheduleJob('* * * * *', function(){
-//     fetchData().then(console.log("hi"));
-//     console.log('The answer to life, the universe, and everything!');
-//   });
+const job = schedule.scheduleJob('* * * * *', function(){
+    fetchData().then(console.log("hi"));
+    console.log('The answer to life, the universe, and everything!');
+  });
 
 app.listen(PORT, console.log(`Listening on port ${PORT}.`));

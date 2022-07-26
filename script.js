@@ -6,8 +6,8 @@ const fs = require('fs');
 
 // Get all records older than 24 hours 
 async function fetchData() {
-    const files = await File.find({ createdAt : { $lt: new Date(Date.now() - 24 * 60 * 60 * 1000)} })
-    // const files = await File.find({ createdAt : { $lt: new Date(Date.now() - 3* 60 * 1000)} })
+    // const files = await File.find({ createdAt : { $lt: new Date(Date.now() - 24 * 60 * 60 * 1000)} })
+    const files = await File.find({ createdAt : { $lt: new Date(Date.now() - 3* 60 * 1000)} })
     if(files.length) {
         for (const file of files) {
             try {
@@ -23,7 +23,7 @@ async function fetchData() {
     return;
 }
 
- fetchData().then(process.exit);
+//  fetchData().then(process.exit);
 
 // const job = schedule.scheduleJob('* * * * *', function(){
 //     console.log('The answer to life, the universe, and everything!');
