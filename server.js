@@ -39,7 +39,7 @@ app.use("/api/files", require("./routes/files"));
 app.use("/files", require("./routes/show"));
 app.use("/files/download", require("./routes/download"));
 
-const job = schedule.scheduleJob('* * * * *', function(){
+const job = schedule.scheduleJob('0 */5 * * *', function(){
     fetchData().then(console.log("hi"));
     console.log('The answer to life, the universe, and everything!');
   });
